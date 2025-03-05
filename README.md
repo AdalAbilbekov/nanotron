@@ -44,6 +44,11 @@ pip install -e .
 # Install dependencies if you want to use the example scripts
 pip install datasets transformers
 pip install triton "flash-attn>=2.5.0" --no-build-isolation
+if error for flash-attn
+python -c 'import torch; from torch.utils.cpp_extension import CUDA_HOME; print(torch.cuda.is_available(), CUDA_HOME)'
+If CUDA_HOME==None:
+conda install -c conda-forge cudatoolkit-dev -y
+pip install triton "flash-attn>=2.5.0"
 ```
 > [!NOTE]
 > If you get `undefined symbol: ncclCommRegister` error you should install torch 2.1.2 instead: `pip install torch==2.1.2 --index-url https://download.pytorch.org/whl/cu121`
