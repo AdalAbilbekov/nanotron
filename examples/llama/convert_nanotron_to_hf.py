@@ -139,9 +139,9 @@ def check_converted_model_generation(save_path: Path):
 
 if __name__ == "__main__":
     parser = ArgumentParser(description="Convert Nanotron weights to HF format")
-    parser.add_argument("--checkpoint_path", type=Path, default="llama-7b", help="Path to the checkpoint")
-    parser.add_argument("--save_path", type=Path, default="llama-7b-hf", help="Path to save the HF model")
-    parser.add_argument("--tokenizer_name", type=str, default="meta-llama/Llama-2-7b-chat-hf")
+    parser.add_argument("--checkpoint_path", type=Path, default="/scratch/adal_abilbekov/models/Llama_1.5B_10-02-2025/42000", help="Path to the checkpoint")
+    parser.add_argument("--save_path", type=Path, default="/scratch/adal_abilbekov/models/Llama_1.5B_10-02-2025/42000_hf", help="Path to save the HF model")
+    parser.add_argument("--tokenizer_name", type=str, default="/scratch/adal_abilbekov/tokenizers/SmolLM-1.7B-plus-10000-kk")
     args = parser.parse_args()
 
     # Convert Nanotron model to HF format.
